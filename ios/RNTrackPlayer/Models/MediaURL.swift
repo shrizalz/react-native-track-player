@@ -26,15 +26,15 @@ struct MediaURL {
             let url = object as! String
             let urlencoded = url.removingPercentEncoding
             isLocal = url.lowercased().hasPrefix("file://")
-            if let encoded = urlencoded!.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed
-                .union(.urlHostAllowed)
-                .union(.urlPasswordAllowed)
-                .union(.urlQueryAllowed)
-                .union(.urlUserAllowed)) {
-                value = URL(string: encoded.replacingOccurrences(of: "file://", with: ""))!
-            } else {
+//             if let encoded = urlencoded!.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed
+//                 .union(.urlHostAllowed)
+//                 .union(.urlPasswordAllowed)
+//                 .union(.urlQueryAllowed)
+//                 .union(.urlUserAllowed)) {
+//                 value = URL(string: encoded.replacingOccurrences(of: "file://", with: ""))!
+//             } else {
                 value = URL(string: url.replacingOccurrences(of: "file://", with: ""))!
-            }
+//             }
         }
     }
 }
